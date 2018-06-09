@@ -48,7 +48,7 @@ class Student
     new_student.name = row[1]
     new_student.length = row[2]
     new_student
-    
+
   end
 
   def find_by_name ()
@@ -56,9 +56,12 @@ class Student
 
   end
 
-  def all?
-
-
+  def self.all
+    sql = <<-SQL
+      SELECT *
+      FROM songs
+      SQL
+      DB[:conn].execute(sql)
   end
 
 end
